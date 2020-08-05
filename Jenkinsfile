@@ -18,12 +18,13 @@ pipeline {
         sh "apk add nodejs"        
         sh "echo $PATH"
         sh 'npm install'
+        sh 'npm i -g mocha'
       }
     }
      
     stage('Test') {
       steps {
-         sh 'npm run test'
+         sh 'npm test -- --exit'
       }
     }      
   }
