@@ -24,7 +24,7 @@ pipeline {
      
     stage('Test') {
       steps {
-         sh 'npm test -- --exit'
+         sh 'npm test > mocha_report_xml 2> err.xml -- --exit'
       }
     }      
   }
