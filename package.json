@@ -4,14 +4,16 @@
   "description": "projetTestCoursCamille",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "test-jenkins": " mocha --colors --reporter mocha-jenkins-reporter > report.xml"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mocha": "^8.1.0"
+    "mocha": "^8.1.0",
+    "mocha-jenkins-reporter": "0.4.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
