@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:10.10.0-alpine'
+            argrs '-p 3000:3000'
+        }
+    }
     
     tools {
       nodejs "node"
@@ -15,8 +20,8 @@ pipeline {
         
     stage('Install dependencies/Build') {
       steps {
-        sh "apk add nodejs"        
-        sh "echo $PATH"
+        //sh "apk add nodejs"        
+        //sh "echo $PATH"
         sh 'npm install'
         sh 'npm i -g mocha'
       }
